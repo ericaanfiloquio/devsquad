@@ -8,7 +8,7 @@ You can find the E2E tests at cypress/e2e.
         Filling in Client Profile Form
         
 | Steps | Expected Results | Real Results | Status | Severity | Priority |
-|:-------|:------------------|:--------------|
+|:-------|:------------------|:--------------|:--------|:--------|:--------|
 | 1.1 Fill in Full Name field | Field is filled with the full name correctly; Field needs to be mandatory with a minimum of caracters | Field is mandatory, minimum of caracterers is 2 | Passed | High | |
 | 1.2 Fill in Email Address field using correct structure of an email: name@email.com | The app accepts only e-mails with the correct structure | The app do not allow email address with not @ in it; Field is mandatory | Passed | High | |
 | 1.3 Fill in Phone Number fields correctly, using existing country calling code (+1) | Phone number is accepted and the app adds the signal +, formatting correctly | Adding the number, the system automatically fills the signal + in the beginning | Passed | High | |

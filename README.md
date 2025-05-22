@@ -1,8 +1,10 @@
 # DevSquad testings
 
-> You can find the E2E tests at cypress/e2e/clientForm.spec.cy.js
-> You can find the tests made in the Client List page at cypress/e2e/clientList.spec.cy.js
-> You can find evidences at Evidences folder
+You can find the E2E tests at cypress/e2e/clientForm.spec.cy.js   
+
+You can find the tests made in the Client List page at cypress/e2e/clientList.spec.cy.js  
+
+You can find evidences at Evidences folder   
 
 ***
 
@@ -16,10 +18,10 @@
 > [*2]While starting the automation, I noticed another error by just visiting the page, before clicking or filling any field: `(uncaught exception)TypeError: Cannot redefine property: disabled`. 
 > 1 - Possible cause: The script is trying to redefine the disabled property of a button, which may violate the native configuration of this property in the DOM. 
 > 2 - This error, however, do not affect the manual test nor the automation completion, that means it did not affect the usability of the page, but needs to be checked in case it affects the system later.   
+   
+## 1 - Testing steps: clientForm.spec.cy.js
 
 Pre-conditions: The user has access to the Form Page, the page is on and it is functioning correctly: (https://qa-training.sbx.devsquad.app/)
-
-## 1 - Testing steps: clientForm.spec.cy.js
 
 **Positive Scenario: Trying to Create a New Client by filling in the Client Profile Form**
         

@@ -17,7 +17,7 @@ describe('DevSquad tests', () => {
   }
 
   it('Filling up Client Form', () => {
-    cy.visit('https://qa-training.sbx.devsquad.app/#')
+    cy.visit('/#')
     cy.get(selectorsList.fullName).type('Joan Smith')
     cy.get(selectorsList.emailAddress).click().type('joes@email.com')
     cy.get(selectorsList.countryPrefix).click().type('1')
@@ -33,8 +33,8 @@ describe('DevSquad tests', () => {
     cy.get(selectorsList.annualIncome).type('20000')
     cy.get(selectorsList.termsConditionsBox).click()
     cy.get(selectorsList.submitButton).click()
-    cy.get(selectorsList.successfullMessage)
-    cy.contains('successfully') // This is to make sure the confirmation was received.
+    cy.get(selectorsList.successfullMessage) // This is to make sure the confirmation was received.
+
     // Error regarding Livewire while it tries to connect and sincronize back-end with front-end.
   })
 })

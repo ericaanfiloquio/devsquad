@@ -18,13 +18,13 @@ describe('DevSquad tests', () => {
 
   it('Filling up Client Form', () => {
     cy.visit('/#')
-    cy.get(selectorsList.fullName).type('Joan Smith')
-    cy.get(selectorsList.emailAddress).click().type('joes@email.com')
+    cy.get(selectorsList.fullName).type('Joan Mark')
+    cy.get(selectorsList.emailAddress).click().type('joan@email.com')
     cy.get(selectorsList.countryPrefix).click().type('1')
     cy.get(selectorsList.phoneNumber).click().type('5558889999')
     cy.get(selectorsList.dateBirth).click().type('2000-05-08')
     cy.get(selectorsList.addressField).click().type('1515 Almond road')
-    cy.get(selectorsList.countryResidence).should('be.visible').click()
+    cy.get(selectorsList.countryResidence).click()
     cy.contains('United States').should('be.visible').click()
     cy.wait(500) // allow States to load - trying to avoid error with Livewire
     cy.get(selectorsList.stateResidence).click()

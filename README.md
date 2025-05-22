@@ -26,7 +26,7 @@ Filling in Client Profile Form
     Test Negative Scenarios: Incomplete Address field; Incomplete Full Name;
     Use other attibutes "wire" to avoid the back-end error  -->
  
-> **Important**  
+> **Important:**  
 > While testing using Cypress, I noticed the following error: `(uncaught exception) Error: Uncaught Snapshot missing on Livewire component with id: b6RmgJ47nOiHbV9yUafv`. While trying to solve it, I tried:  
 > 1 - to "slow down" the filling of the fields within the automation, thinking that the error could be from the back-end not having enough time to give the information to the front-end; 
 > 2 - using other attibutes, finding those more compatible with the Livewire tool;  
@@ -44,5 +44,5 @@ Consulting Client List
 |:-------|:-----------------|:--------------|:--------|:--------|:--------|
 | 2.1 Consult if last client registered is on the list | User is able to filter the column Name and find the client easily | There is currently no way to filter the column. The user must scroll down the page to find the client registration, as the list is sorted ASC. The usability of this search feature is not intuitive and does not follow good UX practices. | Failed | Medium | High |
   
-> **Important Notes:**  
+> **Important:**  
 > The Client List should be intuitive and dynamic — users shouldn’t have to spend too much time searching for information. Filters should be added, allowing users to sort each column as they wish (ascending or descending). It should also be possible to search using partial text in fields like name, date of birth, address, and others. It is part of the user experience.  

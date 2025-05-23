@@ -17,7 +17,7 @@ describe('DevSquad tests', () => {
     errorAlert: "[data-flux-error='']"
   }
 
-  it('Filling up Client Form - correctly', () => {
+  it('Filling in Client Form - correctly', () => {
     cy.visit('/#')
     cy.get(selectorsList.fullName).type('Joan Mark')
     cy.get(selectorsList.emailAddress).click().type('joan@email.com')
@@ -38,7 +38,7 @@ describe('DevSquad tests', () => {
 
     // Error regarding Livewire while it tries to connect and sincronize back-end with front-end.
   })
-  it('Filling up Client Form - being minor', () => {
+  it('Filling in Client Form - Being minor', () => {
     cy.visit('/#')
     cy.get(selectorsList.fullName).type('Henry August')
     cy.get(selectorsList.emailAddress).click().type('Henry@email.com')
@@ -58,7 +58,7 @@ describe('DevSquad tests', () => {
      // There is no age limit: while exploring the application, it didn't show any "error alert" informing that the Client should not be under certain age (18 or 16, for example). FAILED.
   })
 
-  it('Filling up Client Form - Prefix of unexisting country', () => {
+  it('Filling in Client Form - Prefix of nonexistent country', () => {
     cy.visit('/#')
     cy.get(selectorsList.fullName).type('Maria August')
     cy.get(selectorsList.emailAddress).click().type('maria@email.com')
@@ -78,7 +78,7 @@ describe('DevSquad tests', () => {
      // Prefix: the application should not allow a unexisting prefix number. An "error alert" should pop-up, but it doesn't. It allows that the registration is completed. FAILED.
   })
 
-  it('Filling up Client Form - Without selecting a State', () => {
+  it('Filling in Client Form - Without selecting a State', () => {
     cy.visit('/#')
     cy.get(selectorsList.fullName).type('Nav August')
     cy.get(selectorsList.emailAddress).click().type('nav@email.com')
@@ -99,7 +99,7 @@ describe('DevSquad tests', () => {
 
   })
 
-  it('Filling up Client Form - Without an email address', () => {
+  it('Filling in Client Form - Without an email address', () => {
     cy.visit('/#')
     cy.get(selectorsList.fullName).type('Nav August')
     cy.get(selectorsList.emailAddress).click()
@@ -120,7 +120,7 @@ describe('DevSquad tests', () => {
      
   })
 
-  it('Filling up Client Form - With no Income', () => {
+  it('Filling in Client Form - With no Income', () => {
     cy.visit('/#')
     cy.get(selectorsList.fullName).type('Michelle')
     cy.get(selectorsList.emailAddress).click().type('michelle@test.com')
@@ -138,6 +138,26 @@ describe('DevSquad tests', () => {
     cy.get(selectorsList.submitButton).click()
     cy.get(selectorsList.errorAlert)
      // The field "Annual Income" is mandatory, but it does not appear the "error alert" message. The border of the box field turns red when not filled in and try to submit. But to follow the same standard as the order mandatory fields, the message "The name field is required" should appear. FAILED.
+     
+  })
+
+    it('Filling in Client Form - With incorrect Birth Date', () => {
+    cy.visit('/#')
+    cy.get(selectorsList.fullName).type('Raul')
+    cy.get(selectorsList.emailAddress).click().type('raul@test.com')
+    cy.get(selectorsList.countryPrefix).click().type('1')
+    cy.get(selectorsList.phoneNumber).click().type('36584525')
+    cy.get(selectorsList.dateBirth).click().type('1001-05-08')
+    cy.get(selectorsList.addressField).click().type('20 Augustus')
+    cy.get(selectorsList.countryResidence).click()
+    cy.contains('Canada').should('be.visible').click()
+    cy.get(selectorsList.stateResidence).click()
+    cy.contains('Ontario').should('be.visible').click()
+    cy.get(selectorsList.clientType).eq(1).click()
+    cy.get(selectorsList.annualIncome).type('10')
+    cy.get(selectorsList.termsConditionsBox).click()
+    cy.get(selectorsList.submitButton).click()
+     // The app allow us to input any value on Date Birth field, even unexisting date 
      
   })
 })

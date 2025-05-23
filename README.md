@@ -22,12 +22,17 @@ Bellow, you will find the full tests descriptions, 2 positive scenarios and 5 ne
 > **General bugs**  
 > Bug*1 While testing using Cypress, I noticed the following error: `(uncaught exception) Error: Uncaught Snapshot missing on Livewire component with id: b6RmgJ47nOiHbV9yUafv` - id's component changes depending on the component required. While trying to solve it, I tried:  
 > 1 - to "slow down" the filling of the fields within the automation, thinking that the error could be from the back-end not having enough time to give the information to the front-end; 
+   
 > 2 - using other attibutes, finding those more compatible with the Livewire tool;  
+   
 > 3 - made sure some end-points were visible before confirming them, such as the selection of country and state.
+   
 > 4 - This error, however, do not affect the manual test nor the automation completion, that means it did not affect the usability of the page, but needs to be checked in case it affects the system later. 
   
-> Bug*2 While starting the automation, I noticed another error by just visiting the page, before clicking or filling any field: `(uncaught exception)TypeError: Cannot redefine property: disabled`. 
-> 1 - Possible cause: The script is trying to redefine the disabled property of a button, which may violate the native configuration of this property in the DOM. 
+> Bug*2 While starting the automation, I noticed another error by just visiting the page, before clicking or filling any field: `(uncaught exception)TypeError: Cannot redefine property: disabled`.    
+
+> 1 - Possible cause: The script is trying to redefine the disabled property of a button, which may violate the native configuration of this property in the DOM.   
+
 > 2 - This error, however, do not affect the manual test nor the automation completion, that means it did not affect the usability of the page, but needs to be checked in case it affects the system later.   
    
 ## 1 - Filling up Client Form - correctly 
